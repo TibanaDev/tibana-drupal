@@ -29,6 +29,8 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "guncha25/drupal-codeception": "^8.0",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {

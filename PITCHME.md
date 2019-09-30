@@ -23,7 +23,7 @@ Hi, I'm Dustin @emoji[wave]
 
 @ul
 - Limiting the Scope of Your Operations
-- Setting Expectations Inside your Org
+    * Setting Expectations Inside your Org
 - Providing the Tools That Promote Success
 - Keeping the Machine Accessible to the User
 - Leveraging the "Free" Work of Machines
@@ -32,7 +32,7 @@ Hi, I'm Dustin @emoji[wave]
 
 ---
 
-### Limiting the Scope of Your Operations
+## Limiting the Scope of Your Operations
 
 @ul
 - Take stock of your technology inventory

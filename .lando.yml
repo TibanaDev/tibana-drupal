@@ -2,3 +2,34 @@ name: tibana-drupal
 recipe: drupal8
 config:
   webroot: web
+  via: nginx
+env_file:
+  - .env
+services:
+  selenium:
+    type: compose
+    services:
+      image: selenium/standalone-firefox:3.141.59-vanadium
+      user: seluser
+      command: /opt/bin/entry_point.sh
+      ports:
+        - '4444'
+      volumes:
+        - '/dev/shm:/dev/shm'
+      environment:
+        START_XVBF: 'false'
+  theme:
+    type: node
+    command: cd /app/web/themes/custom/${CLIENT_NAME}_theme/ && yarn dev
+    build:
+      - cd /app/web/themes/custom/${CLIENT_NAME}_theme/ && yarn install
+  appserver:
+    build:
+      - cd /app && composer install
+    overrides:
+      environment:
+        MYSQL_DATABASE: drupal8
+        MYSQL_HOSTNAME: database
+        MYSQL_PORT: 3306
+        MYSQL_USER: drupal8
+        MYSQL_PASSWORD: drupal8
