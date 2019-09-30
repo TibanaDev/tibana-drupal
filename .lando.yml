@@ -1,0 +1,4 @@
+name: tibana-drupal
+recipe: drupal8
+config:
+  webroot: web

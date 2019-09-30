@@ -1,0 +1,13 @@
+theme            : template
+title: "Become A Developer Experience Superhero"
+footnote: "@DustinLeblanc"
+highlight: solarized-dark
+theme-background : [ "linear-gradient(black 99%, #D9527A 1%)" ]
+theme-headline   : [ "Lato", "#D9627A", "none" ]
+theme-byline     : [ "Lato", "#D9627A", "none" ]
+theme-text       : [ "lato", "#D9627A", "none" ]
+theme-links      : [ "#7FDBFF", "#0074D9" ]
+theme-controls   : [ "#C0C0C0" ]
+theme-code       : [ "Source Code Pro" ]
+theme-margins : ["15px", "15px"]
+theme-override: presentation/assets/PITCHME.css
