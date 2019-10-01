@@ -31,7 +31,10 @@ services:
       - cd /app/web/themes/custom/${CLIENT_NAME}_theme/ && yarn install
   appserver:
     build:
-      - cd /app && composer install
+    - "mkdir -p /var/www/.platformsh/bin"
+    - "curl -fsSL -o /var/www/.platformsh/bin/platform https://github.com/platformsh/platformsh-cli/releases/download/v3.40.2/platform.phar"
+    - "chmod ug+x /var/www/.platformsh/bin/platform"
+    - "cd /app && composer install -n"
     overrides:
       environment:
         CLIENT_NAME: ${CLIENT_NAME}
@@ -43,3 +46,17 @@ services:
 tooling:
   robo:
     service: appserver
+  platform:
+    service: appserver
+    description: Run Platform CLI commands
+    cmd: /var/www/.platformsh/bin/platform
+  pull:
+    service: appserver
+    description: Pull the prod instance
+    cmd:
+      - appserver: /var/www/.platformsh/bin/platform auth:info || /var/www/.platformsh/bin/platform auth:login
+      - appserver: /var/www/.platformsh/bin/platform db:dump --gzip --file=/app/dump.sql.gz --environment=master
+      - database: /app/scripts/lando/import-db.sh
+      - appserver: rm -f /app/dump.sql.gz
+      - appserver: mkdir -p /app/web/sites/default/files
+      - appserver: /var/www/.platformsh/bin/platform mount:download --mount web/sites/default/files --target /app/web/sites/default/files --environment master

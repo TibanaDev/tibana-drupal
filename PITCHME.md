@@ -73,3 +73,24 @@ Hi, I'm Dustin @emoji[wave]
 - Adjust expected outcomes (estimate for overhead!)
 @ulend
 
+---
+
+### Providing the Tools to Promote Success
+
+@ul
+- Workstation Configuration (Hyperdrive and Lando)
+- Project start states with:
+  * test / qa tools
+  * Complete theme pipeline definition
+  * complete development infrastructure
+  * Clearly defined scripts for repeated tasks (pulling, syncing, compiling, testing)
+  * Issue and pull request templates
+  * CI Config
+  * PaaS config
+  * Good documentation
+- Cloud tools (browserstack, etc)
+@ulend
+
+---
+
+

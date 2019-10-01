@@ -1,0 +1,22 @@
+# The services of the project.
+#
+# Each service listed will be deployed
+# to power your Platform.sh project.
+
+mysqldb:
+    type: mysql:10.2
+    disk: 2048
+    configuration:
+        schemas:
+            - main
+        endpoints:
+            mysql:
+                default_schema: main
+                privileges:
+                    main: admin
+rediscache:
+    type: redis:5.0
+#
+#solrsearch:
+#    type: solr:6.6
+#    disk: 1024
