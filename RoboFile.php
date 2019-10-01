@@ -1,18 +1,57 @@
 <?php
 
-class RoboFile extends \Robo\Tasks {
+/**
+ * @file
+ * Project Robo tasks.
+ */
+
+use Robo\Tasks;
+
+/**
+ * RoboFile.
+ */
+class RoboFile extends Tasks {
   use \Boedah\Robo\Task\Drush\loadTasks;
 
-  function test() {
-
+  /**
+   * Run all QA.
+   */
+  public function test() {
+    $this->lint()
+      ->spec();
   }
 
-  function spec() {
+  /**
+   * Run Codesniffer.
+   */
+  public function lint() {
+    $this->taskExec('vendor/bin/phpcs -n --report=full --standard=Drupal --ignore=*/node_modules/*,/vendor/*,*.md,*.tpl.php,*.css,*.scss --extensions=install,module,php,inc web/modules/custom/ web/themes/custom/ RoboFile.php')
+      ->run();
+    return $this;
+  }
+
+  /**
+   * Run Beautifier.
+   */
+  public function fix() {
+    $this->taskExec('phpcbf --standard=Drupal --ignore=*/node_modules/*,/vendor/*,*.md,*.tpl.php,*.css,*.scss --extensions=install,module,php,inc web/modules/custom/ web/themes/custom/ RoboFile.php')
+      ->run();
+    return $this;
+  }
+
+  /**
+   * Run Acceptance Tests.
+   */
+  public function spec() {
     $this->taskCodecept('vendor/bin/codecept')
       ->suite('acceptance')
       ->run();
+    return $this;
   }
 
+  /**
+   * Install Drupal.
+   */
   public function installDrupal() {
     return $this->taskDrushStack()
       ->siteName(getenv('CLIENT_NAME'))
@@ -23,6 +62,9 @@ class RoboFile extends \Robo\Tasks {
       ->run();
   }
 
+  /**
+   * Generate a Theme.
+   */
   public function generateTheme() {
     $themePath = "web/themes/custom/" . getenv('CLIENT_NAME') . "_theme/";
     $collection = $this->collectionBuilder();
@@ -42,5 +84,5 @@ class RoboFile extends \Robo\Tasks {
       ->to(getenv('CLIENT_NAME') . "_theme");
     return $collection;
   }
-}
 
+}

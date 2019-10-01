@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @file
+ */
+
 $I = new AcceptanceTester($scenario);
 $I->wantTo('See the homepage');
 $I->amOnPage("/");

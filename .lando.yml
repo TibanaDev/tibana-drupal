@@ -39,3 +39,6 @@ services:
         MYSQL_PORT: 3306
         MYSQL_USER: drupal8
         MYSQL_PASSWORD: drupal8
+tooling:
+  robo:
+    service: appserver
