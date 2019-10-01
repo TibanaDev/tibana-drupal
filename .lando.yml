@@ -1,5 +1,11 @@
 name: tibana-drupal
 recipe: drupal8
+excludes:
+  - web/core
+  - web/themes/contrib
+  - web/modules/contrib
+  - vendor
+  - node_modules
 config:
   webroot: web
   via: nginx
