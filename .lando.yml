@@ -34,6 +34,7 @@ services:
       - cd /app && composer install
     overrides:
       environment:
+        CLIENT_NAME: ${CLIENT_NAME}
         MYSQL_DATABASE: drupal8
         MYSQL_HOSTNAME: database
         MYSQL_PORT: 3306
