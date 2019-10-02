@@ -2,7 +2,7 @@ theme            : template
 title: "Become A Developer Experience Superhero"
 footnote: "@DustinLeblanc"
 highlight: solarized-dark
-theme-background : [ "linear-gradient(black 99%, #D9527A 1%)" ]
+theme-background : [ "#000000" ]
 theme-headline   : [ "Lato", "#D9627A", "none" ]
 theme-byline     : [ "Lato", "#D9627A", "none" ]
 theme-text       : [ "lato", "#D9627A", "none" ]

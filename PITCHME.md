@@ -59,9 +59,11 @@ Hi, I'm Dustin @emoji[wave]
 ### Setting Expectations Inside Your Org
 
 @ul
+
 - Equip your sales team with a picture of your ideal project
 - Be explicit about the plan when conditions aren't ideal
 - Define a Standard Issue Flow
+
 @ulend
 
 ---
@@ -69,8 +71,10 @@ Hi, I'm Dustin @emoji[wave]
 #### Handling Deviation
 
 @ul
+
 - Budget accordingly
 - Adjust expected outcomes (estimate for overhead!)
+
 @ulend
 
 ---
@@ -93,4 +97,86 @@ Hi, I'm Dustin @emoji[wave]
 
 ---
 
+#### Workstation Configuration
 
+[Hyperdrive](https://github.com/lando/hyperdrive) is an example of a workstation setup tool created by the creators of Lando. It provides:
+
+@ul
+- Easy setup of SSH Keys
+- Easy setup / installation of Docker & Lando
+- Easy setup of Lando's dev dependencies (NodeJS pinned do our dev version)
+- Git
+- All setup on pretty much any Debian based Linux distro and MacOS
+@ulend
+
+---
+
+Other examples:
+
+@ul
+- [Thoughtbot](https://thoughtbot.com)'s [laptop/dotfiles/rcm](https://github.com/thoughtbot/laptop)
+- [Tandem's Dotfiles](https://github.com/thinktandem/dotfiles) (which are based on Thoughtbot's dotfiles)
+@ulend
+
+---
+
+#### Start states
+
+There is an example start state for this presentation at https://github.com/TibanaDev/tibana-drupal
+
+This presentation also lives in that repo.
+
+Some other examples from Tandem:
+
+@ul
+- https://github.com/thinktandem/drupal8-template
+- https://github.com/thinktandem/vuepress-template
+@ulend
+
+---
+
+We'll dive into the example in this repository after the break and for the rest of the session.
+
+---
+
+### Keeping the Machine Accessible to User
+
+@ul
+- Try to write automation in the lingua franca of your team (PHP, JS)
+- Encourage the team to contribute their learnings from each project
+- Source rough edges in your current infrastructure from your team
+- Assign parts of your systems to be maintained by team members
+- Share your secrets with the world to stir up new ideas
+@ulend
+
+---
+
+### Leveraging the "Free" Work of Machines
+
+@ul
+- Automate Your QA with:
+  * Automated Testing for Mission Critical Features
+  * Continuous Integration Services (Like TravisCI)
+  * Code Complexity Services (like CodeClimate, and CI runs of PHPCS, PHPMD, etc)
+- Workflow Automation of good PaaS providers (PlatformSH, Pantheon, Laravel Forge)
+@ulend
+
+---
+
+### Creating a Culture of Constant Improvement
+
+@ul
+- Track infrastructure and process problems the same way you track bugs
+- Collect new ideas for changes in the same way you track features
+- Regularly schedule reviews to discuss those changes
+@ulend
+
+---
+
+Let's Take a break!
+
+---
+
+Let's dive into an example start state
+
+---
