@@ -63,6 +63,7 @@ Hi, I'm Dustin @emoji[wave]
 - Equip your sales team with a picture of your ideal project
 - Be explicit about the plan when conditions aren't ideal
 - Define a Standard Issue Flow
+- Decide on choices for services and technology
 
 @ulend
 
@@ -129,8 +130,9 @@ This presentation also lives in that repo.
 Some other examples from Tandem:
 
 @ul
-- https://github.com/thinktandem/drupal8-template
-- https://github.com/thinktandem/vuepress-template
+- https://github.com/thinktandem/template-drupal8
+- https://github.com/thinktandem/template-vuepress
+- https://github.com/thinktandem/template-minimis
 @ulend
 
 ---
