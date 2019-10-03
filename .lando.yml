@@ -46,6 +46,7 @@ services:
 tooling:
   robo:
     service: appserver
+    cmd: /app/vendor/bin/robo
   platform:
     service: appserver
     description: Run Platform CLI commands
